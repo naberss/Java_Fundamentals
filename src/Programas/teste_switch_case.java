@@ -42,6 +42,7 @@ public class teste_switch_case {
 			dia = "Valor inválido";
 			break;
 		}
+		//teste//
 		System.out.println("O número " + X + " corresponde ao dia " + dia);
 	}
 
