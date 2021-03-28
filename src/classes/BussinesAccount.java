@@ -20,4 +20,9 @@ public class BussinesAccount extends Account {
 
 	}
 
+	@Override
+	public void withdraw(double number) {
+		this.balance = (this.balance - number);
+	}
+
 }

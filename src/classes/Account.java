@@ -1,12 +1,13 @@
 package classes;
 
-public class Account {
+public  final  class Account {
 
 	protected int number;
 	protected String holder;
 	protected double balance;
 
 	public Account() {
+		this.holder = "PERA";
 
 	}
 
@@ -38,6 +39,8 @@ public class Account {
 		return balance;
 	}
 
-	
+	public final void withdraw(double number) {
+		this.balance = (this.balance - (number + 5));
+	}
 
 }
