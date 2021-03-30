@@ -5,7 +5,6 @@ public class Product_order {
 	private Double price;
 
 	public Product_order(String name, Double price) {
-		super();
 		this.name = name;
 		this.price = price;
 	}

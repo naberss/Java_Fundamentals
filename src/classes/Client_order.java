@@ -10,7 +10,6 @@ public class Client_order {
 	private Date birthDate;
 
 	public Client_order(String name, String email, Date birthDate) {
-		super();
 		this.name = name;
 		this.email = email;
 		this.birthDate = birthDate;
