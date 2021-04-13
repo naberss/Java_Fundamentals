@@ -1,6 +1,6 @@
 package classes;
 
-public  final  class Account {
+public   abstract class Account {
 
 	protected int number;
 	protected String holder;
@@ -39,7 +39,7 @@ public  final  class Account {
 		return balance;
 	}
 
-	public final void withdraw(double number) {
+	public void withdraw(double number) {
 		this.balance = (this.balance - (number + 5));
 	}
 
