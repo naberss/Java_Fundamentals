@@ -8,15 +8,11 @@ public class File_and_Buffered_Reader {
 
 	public static void main(String[] args) {
 		String path = "C:\\Users\\Lucas\\Documents\\MY_TXT.txt";
-		FileReader fr = null;
-		BufferedReader br = null;
 
-		try {
+		
+		    //cria BufferedReader e instancia o FileReader na mesma linha, usando try-with-resources
+		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			// Cria objeto para ler diretamente do arquivo texto em disco
-			fr = new FileReader(path);
-			// Cria objeto para armazenar em memoria por e instante de processamento, linha
-			// especifica do arquivo texto a ser processada
-			br = new BufferedReader(fr);
 
 			// Desaloca a linha atual da memória e pega a proxima
 			String line = br.readLine();
@@ -34,28 +30,6 @@ public class File_and_Buffered_Reader {
 
 		catch (IOException e) {
 			System.out.println("Erro:" + e.getMessage());
-		} finally {
-			
-			// Fechamento do buffered reader e subtratamento de exeção na utilização do metodo close
-			try {
-				if (br != null) {
-					br.close();
-				}
-			} catch (Exception f) {
-				f.printStackTrace();
-
-			}
-
-			
-			// Fechamento do file reader e subtratamento de exeção na utilização do metodo close
-			try {
-				if (fr != null) {
-					fr.close();
-				}
-			} catch (Exception f) {
-				f.printStackTrace();
-
-			}
 		}
 
 	}
