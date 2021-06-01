@@ -1,6 +1,6 @@
 package classes;
 
-public final class Rectangle extends Shape {
+public final class Rectangle extends AbstractShape {
 
 	private Double width;
 	private Double height;

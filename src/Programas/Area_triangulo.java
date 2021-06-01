@@ -23,8 +23,8 @@ public class Area_triangulo {
 		y.b = scan.nextDouble();
 		y.c = scan.nextDouble();
 		scan.close();
-		System.out.printf("A área do triângulo X é de %.4f%n", x.area(x.a, x.b, x.c));
-		System.out.printf("A área do triângulo y é de %.4f%n", y.area(y.a, y.b, y.c));
+		System.out.printf("A área do triângulo X é de %.4f%n", x.area());
+		System.out.printf("A área do triângulo y é de %.4f%n", y.area());
 		// End
 		
 		
