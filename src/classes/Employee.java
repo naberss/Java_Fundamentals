@@ -1,6 +1,6 @@
 package classes;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
 
 	protected String name;
 	protected Integer hours;
@@ -12,6 +12,11 @@ public class Employee {
 		this.hours = hours;
 		this.ValuePerHour = ValuePerHour;
 		this.type = type;
+	}
+
+	public Employee(String name, Double ValuePerHour) {
+		this.name = name;
+		this.ValuePerHour = ValuePerHour;
 	}
 
 	public Employee() {
@@ -65,6 +70,11 @@ public class Employee {
 		sb.append("Type: " + this.type + " \n");
 
 		return sb.toString();
+	}
+
+	@Override
+	public int compareTo(Employee o) {
+		return name.compareTo(o.getName());
 	}
 
 }

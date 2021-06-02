@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import classes.AbstractShape;
 import classes.Circle;
 import classes.Color;
 import classes.Rectangle;
@@ -14,7 +15,7 @@ public class Program_shape {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		Integer vld_acao = null;
-		List<Shape> shapes = new ArrayList<>();
+		List<AbstractShape> shapes = new ArrayList<>();
 
 		do {
 
@@ -41,7 +42,7 @@ public class Program_shape {
 
 	}
 
-	public static void registerShape(List<Shape> shapes) {
+	public static void registerShape(List<AbstractShape> shapes) {
 		Scanner scan = new Scanner(System.in);
 		String color;
 		Color real_color;
@@ -92,7 +93,7 @@ public class Program_shape {
 
 	}
 
-	public static void listAreas(List<Shape> shapes) {
+	public static void listAreas(List<AbstractShape> shapes) {
 		System.out.println("SHAPE AREAS: \n");
 
 		for (Shape list : shapes) {
