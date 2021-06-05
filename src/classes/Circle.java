@@ -1,11 +1,17 @@
 package classes;
 
-public final class Circle extends AbstractShape {
+import services.MyShape;
+
+public final class Circle extends AbstractShape implements MyShape{
 
 	private Double radius;
 
 	public Circle(Double radius, Color color) {
 		super(color);
+		this.radius = radius;
+	}
+
+	public Circle(Double radius) {
 		this.radius = radius;
 	}
 
