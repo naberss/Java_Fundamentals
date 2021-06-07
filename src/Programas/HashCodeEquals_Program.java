@@ -23,9 +23,9 @@ public class HashCodeEquals_Program {
 
 		if (list1.get(0).hashCode() == list1.get(1).hashCode()) {
 			if (list1.get(0).equals(list1.get(1))) {
-				System.out.println("pera");
+				System.out.println("identicos");
 			} else {
-				System.out.println("mamao");
+				System.out.println("diferentes");
 			}
 		}
 

@@ -1,6 +1,6 @@
 package classes;
 
-public class HashCodeEquals_TestClass {
+public class HashCodeEquals_TestClass implements Comparable<HashCodeEquals_TestClass> {
 
 	protected String name;
 	protected String email;
@@ -30,7 +30,6 @@ public class HashCodeEquals_TestClass {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
@@ -44,11 +43,6 @@ public class HashCodeEquals_TestClass {
 		if (getClass() != obj.getClass())
 			return false;
 		HashCodeEquals_TestClass other = (HashCodeEquals_TestClass) obj;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
@@ -57,5 +51,14 @@ public class HashCodeEquals_TestClass {
 		return true;
 	}
 
+	@Override
+	public int compareTo(HashCodeEquals_TestClass o) {
+		return name.compareToIgnoreCase(o.getName());
+	}
+
+	@Override
+	public String toString() {
+		return "HashCodeEquals_TestClass [name=" + name + ", email=" + email + "]";
+	}
 
 }
