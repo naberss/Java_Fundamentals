@@ -11,7 +11,7 @@ public class Produto {
 		this.preco = preco;
 		this.quantidade = quantidade;
 	}
-	
+
 	public Produto(String nome, double preco) {
 		this.nome = nome;
 		this.preco = preco;
@@ -31,6 +31,19 @@ public class Produto {
 
 	public void DeletaProdutos(int quantidade) {
 		this.quantidade -= quantidade;
+	}
+
+	public static Boolean RandomTest(Produto t) {
+		return t.quantidade == 3;
+	}
+	
+	public String apply() {
+		return getName().toUpperCase();
+	}
+	
+	public void accept3() {
+		setPrice(getPrice() * 1.1);
+
 	}
 
 	// Generic methods

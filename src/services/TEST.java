@@ -1,8 +1,10 @@
 package services;
 
-@FunctionalInterface
-public interface TEST<T> {
+import java.util.Comparator;
 
-	int myinttest(T t1);
+
+public interface TEST<T> extends Comparator<T>{
+
+	int myinttest(T t1,T t2);
 
 }
