@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,21 +33,19 @@ public class Exercicio_1_section_20 {
 			}
 			System.out.println("Fim da leitura do arquivo! ");
 
-			Double medio = myList.stream().map(x -> x.getPreco()).reduce(0.0, Double::sum);
-
-			medio = medio / myList.size();
+			Double medio = myList.stream().map(x -> x.getPreco()).reduce(0.0, (x, y) -> x + y) / myList.size();
 
 			final Double medioAux = medio;
 
 			System.out.println("Preço médio: " + medio);
+			
+			Comparator<String> comp = (s1,s2) -> s2.compareTo(s1);
 
-			List<Exercicio_1_section_20_classe> myListaux = myList.stream().filter(x -> x.getPreco() < medioAux)
+			List<String> myListaux = myList.stream().filter(x -> x.getPreco() < medioAux).map(x -> x.getName()).sorted(comp.reversed())
 					.collect(Collectors.toList());
 
-			Collections.sort(myListaux);
-
-			for (Exercicio_1_section_20_classe rec : myListaux) {
-				System.out.println("Nome: " + rec.getName() + " / Preço: " + rec.getPreco());
+			for (String rec : myListaux) {
+				System.out.println(rec);
 			}
 
 		} catch (FileNotFoundException e) {
